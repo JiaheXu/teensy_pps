@@ -42,7 +42,7 @@ void setup() {
 
   Serial.begin(9600);    // for usb serial, for testing. can directly connect to PC
 
-  timer.begin(pulse, 100000); // 1/10th of a second
+  timer.begin(pulse, 10000); // 1/10th of a second
 }
 
 
@@ -50,7 +50,7 @@ void pulse(){
   // turn the LED on for 1 second at the beginning of each 10 second period
   if(pulse_count == 0)
     digitalWrite(LED_pin, HIGH);
-  else if(pulse_count == 10)
+  else if(pulse_count == 1)
    digitalWrite(LED_pin, LOW);
 
   // build the time packet
@@ -83,4 +83,3 @@ void pulse(){
 void loop() {
   
 }
-
